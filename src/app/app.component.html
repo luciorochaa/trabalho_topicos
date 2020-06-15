@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"> UniBH - Tópicos Especiais </a>
+  
+
+
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" [routerLink]="['./pessoas']" routerLinkActive="active"> Pessoa </a>
+    <a class="nav-item nav-link" [routerLink]="['./grupos']" routerLinkActive="active"> Grupos </a>
+    <a class="nav-item nav-link" [routerLink]="['./recursos']" routerLinkActive="active"> Recursos </a>
+  </div>
+</div>
+</nav>
+
+<div> 
+<router-outlet></router-outlet>
+</div>

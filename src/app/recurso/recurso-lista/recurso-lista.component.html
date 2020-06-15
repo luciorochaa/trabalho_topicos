@@ -1,0 +1,15 @@
+<!--<ul>
+    <li *ngFor="let recurso of recursos | async">{{ recurso.descricao }}</li>
+    
+</ul>-->
+
+<ul class="list-group">
+    
+    <li class="list-group-item d-flex justify-content-between align-items-center"
+    
+        *ngFor="let recurso of recursos | async">{{ recurso.descricao  }}   
+        
+    </li>
+      
+    
+    </ul>

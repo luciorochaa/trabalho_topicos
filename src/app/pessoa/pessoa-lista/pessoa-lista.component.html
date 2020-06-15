@@ -1,0 +1,16 @@
+<!--<ul>
+    <li *ngFor="let pessoa of pessoas | async">Nome: {{ pessoa.nome }}</li>
+    
+</ul>-->
+
+<ul class="list-group">
+    
+    <li class="list-group-item d-flex justify-content-between align-items-center"
+    
+        *ngFor="let pessoa of pessoas | async">Nome: {{ pessoa.nome  }}    -     
+        
+        <span class="badge badge-primary badge-pill mr-auto" ngFor="let pessoa of pessoas | async">ID: {{ pessoa.id }}</span>
+    </li>
+      
+    
+    </ul>
