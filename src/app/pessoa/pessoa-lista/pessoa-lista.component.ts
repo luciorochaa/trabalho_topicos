@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { Pessoa } from '../pessoa.interface';
 import { Observable, empty } from 'rxjs';
-import { PessoaService } from '../pessoa.service'; 
+import { PessoaService } from '../pessoa.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { PessoaService } from '../pessoa.service';
 
 export class PessoaListaComponent implements OnInit {
 
-  
+
   pessoas: Observable<Pessoa>;
   alertService: any;
 
@@ -23,26 +23,32 @@ export class PessoaListaComponent implements OnInit {
     this.pessoas = this.servico.getPessoa();
   }
 
-  apagar(id: number)
-  {
-    this.servico.deletePessoa(id).subscribe();
-    
-    }
-
-
-
-
-
-/*success => {
-        //this.onRefresh();
+  apagar(id: number): void {
+    this.servico.deletePessoa(id).subscribe(
+      ata => {
+        this.ngOnInit();
       },
-      error=> this.alertService.showAlertDanger('Erro ao remover. Tente novamente')
-    );*/
-  
-  
-/*  handleError() {
-    this.alertService.showAlertDanger('Erro ao carregar pessoas. Tente novamente')
-  }*/
+      error => {
+        alert('ERRO');
+      }
+    );
+
+  }
+
+
+
+
+
+  /*success => {
+          //this.onRefresh();
+        },
+        error=> this.alertService.showAlertDanger('Erro ao remover. Tente novamente')
+      );*/
+
+
+  /*  handleError() {
+      this.alertService.showAlertDanger('Erro ao carregar pessoas. Tente novamente')
+    }*/
 
 }
 
