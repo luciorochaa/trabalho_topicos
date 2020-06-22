@@ -1,8 +1,27 @@
-<!--<ul>
-    <li *ngFor="let pessoa of pessoas | async">Nome: {{ pessoa.nome }}</li>
-    
-</ul>-->
+<div class="col-xs-12" style="height: 50px;"> </div>
+<div class="mx-auto" style="width: 1000px;">
+    <div>
+        <button type="button" class="btn btn-primary btn-lg" [routerLink]="['/pessoas/form']">Novo</button>
+    </div>
+    <br>
 
+<div class="row">
+    <div class="mx-auto col-sm-4" *ngFor="let pessoa of pessoas | async">
+        <div class="card" style="width: 18rem;">
+            <img src="https://picsum.photos/200/50" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title"> Nome: {{ pessoa.nome }} </h5>
+            <p class="card-text"> Teste de teste para testar os trechos de códigos de topicos. </p>
+            <a role="button" class="mr-1 btn btn-primary txt-white">Visualizar</a>
+            <a role="button" class=" btn btn-danger txt-white" (click)="apagar(pessoa.id)"> Apagar </a>    
+            </div>
+        </div>
+        <br>
+    </div>
+</div>
+
+
+<!--
 <ul class="list-group">
     
     <li class="list-group-item d-flex justify-content-between align-items-center"
@@ -11,6 +30,7 @@
         
         <span class="badge badge-primary badge-pill mr-auto" ngFor="let pessoa of pessoas | async">ID: {{ pessoa.id }}</span>
     </li>
-      
+    <a role="button" class="btn btn-danger text-white" (click)="apagar(pessoa.id)"> Apagar </a>
     
     </ul>
+-->
