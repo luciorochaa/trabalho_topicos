@@ -38,7 +38,6 @@ export class PessoaListaComponent implements OnInit {
 
 
 
-
   /*success => {
           //this.onRefresh();
         },
